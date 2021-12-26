@@ -1,0 +1,11 @@
+label {
+    display: block;
+}
+input {
+    width: 500px;
+    margin-bottom: 15px;
+}
+button {
+  display: block;
+  padding: 10px;
+}

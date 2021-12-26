@@ -1,0 +1,74 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 4rem;
+  margin: 0;
+}
+
+#login-img {
+  width: 50%;
+  background-color: #4ca77e;
+  height: 100%;
+  text-align: center;
+}
+
+main {
+  width: 50%;
+}
+
+.form-control-inline {
+  margin: 1rem 0;
+}
+
+.form-control-inline label {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.form-control-inline input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-color: transparent;
+  background-color: #c4c4c4;
+}
+
+body button {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 1rem;
+  border-color: transparent;
+  border-radius: 0;
+  background-color: #cb3236;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+
+.flash {
+  color: red;
+  margin: 0;
+}
+
+.home-btn {
+  position: absolute;
+  padding: 1rem;
+  color: aliceblue;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+}

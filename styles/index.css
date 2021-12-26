@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mountains+of+Christmas&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f2e9;
+}
+
+.header {
+  min-height: 0px;
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* --------------------------------- NAVBAR --------------------------------- */
+nav {
+  position: absolute;
+  display: flex;
+  height: 5rem;
+  width: 80%;
+  margin: 0 10%;
+
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #cf475a;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+}
+
+.fa-home {
+  color: #cf475a;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.prev-next {
+  padding: 0 3rem;
+}
+
+/* ------------------------ SIGN UP and LOGIN buttons ----------------------- */
+nav ul li a {
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  border: 3px solid #cf475a;
+  text-decoration: none;
+}
+
+.sign_up {
+  font-family: IBM Plex Sans;
+  font-size: 1rem;
+  color: #cf475a;
+}
+
+.log_in {
+  font-family: IBM Plex Sans;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  background: #cf475a !important;
+  color: #f5f2e9;
+}
+
+.sign_up:hover,
+.log_in:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+h1 {
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* 12 DAYS OF CHRISTMAS */
+.text_box {
+  text-align: center;
+
+  font-family: Ubuntu;
+  font-style: normal;
+  font-size: 50px;
+  line-height: 165px;
+  display: block;
+
+  color: #2b5341;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+}
+
+.grid-container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  grid-gap: 1rem;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------------- GRID ITEM ------------------------------- */
+
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 3em;
+}
+
+.grid-item {
+  height: 20vh;
+  width: auto;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  
+}
+
+.yellow {
+  background-color: #e3c45a;
+}
+.red {
+  background-color: #cf475a;
+}
+.green {
+  background-color: #3b8161;
+}
+
+.day-img {
+  height: 6rem;
+  width: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.grid-item-back {
+  transform: rotateY(180deg);
+}
+
+.grid-item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item:hover .grid-item-inner {
+  transform: rotateY(180deg);
+  box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.25);
+}
+
+.grid-item-front, .grid-item-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-item-front {
+  color: #f5f2e9;
+}
+
+.grid-item-back {
+  transform: rotateY(180deg);
+}

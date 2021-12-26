@@ -1,0 +1,14 @@
+img {
+  width: 50%;
+  margin-top: 5rem;
+}
+
+form {
+  width: 70%;
+  margin: 250px auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+

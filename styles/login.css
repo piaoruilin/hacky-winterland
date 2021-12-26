@@ -1,0 +1,32 @@
+img {
+  width: 70%;
+  margin-top: 10rem;
+}
+
+form {
+  width: 70%;
+  margin: 250px auto;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.sign_up {
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 1rem;
+  border-color: transparent;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 3px #CB3236 solid;
+  background-color: transparent;
+  color: #CB3236;
+}
+
+a {
+  text-decoration: none;
+}

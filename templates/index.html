@@ -1,0 +1,81 @@
+{% extends "layout.html" %} 
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="/static/styles/index.css" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+{% endblock %}
+
+{% block title %} 12-Days-of-Christmas-with-us {% endblock %} 
+
+{% block body %}
+  <body>
+    <section class="header">
+      <nav>
+        <a href="/">
+            <i class="fa fa-home fa-2x btn"></i>
+        </a>
+
+        <ul>
+            {% if not logged_in %}
+            <li><a class="sign_up" href="/auth/signup">SIGN UP</a></li>
+            <li><a class="log_in {{ gradient_colour }}" href="/auth/login">LOG IN</a></li>
+            {% else %}
+            <li><a class="log_in {{ gradient_colour }}" href="/auth/logout">LOG OUT</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    </section>
+
+    <div class="text_box">
+      <h1>12 DAYS OF CHRISTMAS</h1>
+    </div>
+
+    <div class="grid-container">
+      {% for day in days %}
+      
+      {% if day["day_num"] % 3 == 1 and day["day_num"] <=6 %}
+        {% set colour = "green" %}
+      {% endif %}
+      {% if day["day_num"] % 3 == 2 and day["day_num"] <= 6 %}
+        {% set colour = "red" %}
+      {% endif %}
+      {% if day["day_num"] % 3 == 0 and day["day_num"] <= 6 %}
+        {% set colour = "yellow" %}
+      {% endif %}
+
+      {% if day["day_num"] % 3 == 2 and day["day_num"] > 6 %}
+        {% set colour = "green" %}
+      {% endif %}
+      {% if day["day_num"] % 3 == 0 and day["day_num"] > 6 %}
+        {% set colour = "red" %}
+      {% endif %}
+      {% if day["day_num"] % 3 == 1 and day["day_num"] > 6 %}
+        {% set colour = "yellow" %}
+      {% endif %}
+
+      <a class="grid-item" href={{ day_links[day["day_num"]-1] }}>
+        <div class="grid-item-inner">
+          <div class="grid-item-front {{ colour }}">
+            <h2>{{ day["day_num"] }}</h2>
+          </div>
+          <div class="grid-item-back {{ colour }}">
+            <img
+              src={{ day["img"] }}
+              alt="Christmas Themed Day Image"
+              class="day-img"
+            >
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </body>
+</html>
+{% endblock %}

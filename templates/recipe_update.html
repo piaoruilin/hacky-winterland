@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block style %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/internal.css') }}"
+  />
+{% endblock %} {% block title %} 12-Days-of-Christmas-with-us {% endblock %} 
+
+{% block body %}
+  <h1>Adding recipe items to database</h1>
+    <form action="/recipe" method="post">
+      <h2>Recipes</h2>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">*{{ message }}</div>
+      {% endfor %}
+      <label for="recipe-title">Title</label>
+      <input type="text" name="recipe-title" id="recipe-title" required />
+      <label for="recipe-desc">Description</label>
+      <input type="text" name="recipe-desc" id="recipe-desc" required />
+      <label for="recipe-link">External link</label>
+      <input type="text" name="recipe-link" id="recipe-link" required />
+      <label for="recipe-img">Image path (in repo)</label>
+      <input type="text" name="recipe-img" id="recipe-img" value="/static/recipes/" required />
+      <button type="submit">Submit</button>
+    </form>
+
+  {% for recipe in recipes %}
+    <hr>
+    <p>{{ recipe[0] }}: {{ recipe[1] }}</p>
+    <p>Description: {{ recipe[2] }}</p>
+    <p>Path: {{ recipe[3] }}</p>
+    <p>URL: {{ recipe[4] }}</p>
+  {% endfor %}
+{% endblock %}

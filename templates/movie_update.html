@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block style %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/internal.css') }}"
+  />
+{% endblock %} {% block title %} 12-Days-of-Christmas-with-us {% endblock %} 
+
+{% block body %}
+  <h1>Adding movie items to database</h1>
+    <form action="/movie" method="post">
+      <h2>Movies</h2>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">*{{ message }}</div>
+      {% endfor %}
+      <label for="movie-title">Title</label>
+      <input type="text" name="movie-title" id="movie-title" required />
+      <label for="movie-desc">Description</label>
+      <input type="text" name="movie-desc" id="movie-desc" required />
+      <label for="movie-link">External link</label>
+      <input type="text" name="movie-link" id="movie-link" required />
+      <label for="movie-img">Image path (in repo)</label>
+      <input type="text" name="movie-img" id="movie-img" value="/static/movies" required />
+      <button type="submit">Submit</button>
+    </form>
+
+  {% for movie in movies %}
+    <hr>
+    <p>{{ movie[0] }}: {{ movie[1] }}</p>
+    <p>Description: {{ movie[2] }}</p>
+    <p>Path: {{ movie[3] }}</p>
+    <p>URL: {{ movie[4] }}</p>
+  {% endfor %}
+{% endblock %}

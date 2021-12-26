@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block style %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='styles/userinfo.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='styles/login.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+{% endblock %} {% block title %} Login {% endblock %} {% block body %}
+<nav>
+  <a href="/">
+    <i class="fa fa-home fa-2x home-btn"></i>
+  </a>
+</nav>
+<div id="login-img">
+  <img
+    src="{{ url_for('static', filename='santa/santa_flying_angle.png') }}"
+    alt="Flying Santa Claus"
+  />
+</div>
+<main>
+  <form action="/auth/login" method="post">
+    {% for message in get_flashed_messages() %}
+    <div class="flash">*{{ message }}</div>
+    {% endfor %}
+    <div class="form-control-inline">
+      <label for="user-email">Your email</label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        autofocus
+        id="user-email"
+        name="email"
+      />
+    </div>
+    <div class="form-control-inline">
+      <label for="user-password">Password</label>
+      <input
+        type="password"
+        placeholder="Enter your password"
+        id="user-password"
+        name="password"
+      />
+    </div>
+
+    <button class="btn" type="submit">Login</button>
+    <a href="/auth/signup"><div class="btn sign_up">Sign up</div></a>
+  </form>
+</main>
+{% endblock %}

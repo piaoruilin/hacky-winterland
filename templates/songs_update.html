@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block style %}
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='styles/internal.css') }}"
+  />
+{% endblock %} {% block title %} 12-Days-of-Christmas-with-us {% endblock %} 
+
+{% block body %}
+  <h1>Adding song items to database</h1>
+    <form action="/song" method="post">
+      <h2>Songs</h2>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">*{{ message }}</div>
+      {% endfor %}
+      <label for="song-title">Title</label>
+      <input type="text" name="song-title" id="song-title" required />
+      <label for="song-art">Description</label>
+      <input type="text" name="song-art" id="song-art" required />
+      <label for="song-img">Image path (in repo)</label>
+      <input type="text" name="song-img" id="song-img" value="/static/song-img/" required />
+      <label for="song-mp3">MP3 Path</label>
+      <input type="text" name="song-mp3" id="song-mp3" value="/static/song-mp3/" required />
+      <button type="submit">Submit</button>
+    </form>
+
+  {% for song in songs %}
+    <hr>
+    <p>{{ song[0] }}: {{ song[1] }}</p>
+    <p>Artist: {{ song[2] }}</p>
+    <p>IMG: {{ song[3] }}</p>
+    <p>MP3: {{ song[4] }}</p>
+  {% endfor %}
+{% endblock %}
